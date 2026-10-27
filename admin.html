@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ · FOHOW Новосибирск</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <a class="logo" href="index.html">FOHOW</a>
+      <a class="header-cta" href="index.html">На сайт</a>
+    </header>
+
+    <main class="admin-main wrap">
+      <section class="admin-login" id="login-view">
+        <h1>Вход администратора</h1>
+        <p>Кабинет Валентины для просмотра заявок с сайта.</p>
+        <form id="login-form" class="admin-form" novalidate>
+          <label>
+            Логин (email)
+            <input
+              type="email"
+              name="email"
+              autocomplete="username"
+              required
+              value="admin@admin.com"
+            />
+          </label>
+          <label>
+            Пароль
+            <input type="password" name="password" autocomplete="current-password" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Войти</button>
+          <p class="admin-error" id="login-error" hidden></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" id="dashboard-view" hidden>
+        <div class="admin-top">
+          <div>
+            <h1>Заявки на консультацию</h1>
+            <p class="admin-user">Вы вошли как <strong>admin@admin.com</strong></p>
+          </div>
+          <button class="btn btn-ghost" type="button" id="logout-btn">Выйти</button>
+        </div>
+
+        <div class="admin-actions">
+          <button class="btn btn-ghost" type="button" id="refresh-btn">Обновить</button>
+          <button class="btn btn-ghost" type="button" id="clear-btn">Очистить заявки</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Имя</th>
+                <th>Контакт</th>
+                <th>Формат</th>
+                <th>Источник</th>
+              </tr>
+            </thead>
+            <tbody id="leads-body">
+              <tr>
+                <td colspan="5">Заявок пока нет.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
